@@ -29,6 +29,8 @@ function readDirect()
         if (is_dir($path) && $dh = opendir($path)) {
             while (($file = readdir($dh)) !== false) {
                 if ($file !== "." && $file !== ".." &&  pathinfo($file, PATHINFO_EXTENSION)) {
+                    $vari = pathinfo($file, PATHINFO_EXTENSION);
+                    echo $vari;
                     echo "<div class = 'middleDivs'><a href='index.php?files=$path'>" . $file . "</a></div>";
                 } else if ($file !== "." && $file !== ".." &&  !pathinfo($file, PATHINFO_EXTENSION)) {
                     echo "<div class = 'middleDivs'><a href='index.php?files=$path/$file'><i class='bi bi-folder-fill'></i>" . $file . "</a></div>";

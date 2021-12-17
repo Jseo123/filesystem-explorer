@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer{
+    display: flex;
+    flex-basis: 100%;
+}
+
+.flexBasis{
+    display: flex;
+    flex-basis: 20%;
+    background-color: blue;
+}
+.middleFlex{
+    display: flex;
+    flex-basis: 60%;
+}

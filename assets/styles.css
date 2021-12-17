@@ -11,9 +11,19 @@
 .flexBasis{
     display: flex;
     flex-basis: 20%;
-    background-color: yellow;
+    background-color: red;
 }
 .middleFlex{
     display: flex;
+    flex-direction: column;
     flex-basis: 60%;
+}
+
+.leftSideCon {
+    display: flex;
+    flex-direction: column;
+}
+
+.subdirectories {
+margin-left: 20%;
 }

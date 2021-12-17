@@ -11,16 +11,17 @@
     
 </nav>
 <main class = "mainContainer">
-    <div class = "flexBasis">
+    <div class = "flexBasis leftSideCon">
         <?php
             require_once "functions.php";
             callFolders();
 
         ?>
-        Mundo
     </div>
     <div class = "middleFlex">
-        Caracola
+        <?php
+    readDirect();
+        ?>
     </div>
     <div class = "flexBasis">
         Holaaa

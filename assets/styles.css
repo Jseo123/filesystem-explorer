@@ -12,12 +12,20 @@
     display: flex;
     flex-basis: 20%;
     background-color: red;
+    padding-top: 1%;
+    padding-left: 2%;
 }
-.middleFlex{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 60%;
+
+a{
+    text-decoration: none !important;
+    color: black !important;
 }
+
+.bi-folder-fill{
+    color: rgb(206, 166, 65);
+    margin-right: 4px;
+}
+
 
 .leftSideCon {
     display: flex;
@@ -27,3 +35,14 @@
 .subdirectories {
 margin-left: 20%;
 }
+
+/* Midle Container*/
+.middleFlex{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
+    padding-top: 1%;
+    padding-left: 2%;
+}
+
+

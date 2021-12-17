@@ -11,7 +11,7 @@
 .flexBasis{
     display: flex;
     flex-basis: 20%;
-    background-color: blue;
+    background-color: yellow;
 }
 .middleFlex{
     display: flex;

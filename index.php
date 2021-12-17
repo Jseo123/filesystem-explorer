@@ -13,14 +13,8 @@
 <main class = "mainContainer">
     <div class = "flexBasis">
         <?php
-            $path = "root/directory1/";
-            if (is_dir($path)){
-                if($dh = opendir($path)){
-                    while(!($file = readdir($dh)) == false){
-                        echo "filename:" . $file . "<br>";
-                    }closedir($dh);
-                }
-            }
+            require_once "functions.php";
+            callFolders();
 
         ?>
         Mundo

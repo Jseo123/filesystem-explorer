@@ -20,6 +20,10 @@
             callFolders();
 
         ?>
+        <form action="newFolder.php">
+            <input type="text" name = "folderName">
+            <button type="submit"><i class="fas fa-plus"></i></button>
+        </form>
     </div>
     <div class = "middleFlex">
         <?php

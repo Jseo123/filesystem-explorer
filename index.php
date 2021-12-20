@@ -23,7 +23,7 @@
     </div>
     <div class = "middleFlex">
         <?php
-    readDirect();
+            openFolders();
         ?>
     </div>
     <div class = "flexBasis">

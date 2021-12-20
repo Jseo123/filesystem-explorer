@@ -29,9 +29,10 @@ function readDirect()
         if (is_dir($path) && $dh = opendir($path)) {
             while (($file = readdir($dh)) !== false) {
                 if ($file !== "." && $file !== ".." &&  pathinfo($file, PATHINFO_EXTENSION)) {
-                    $vari = pathinfo($file, PATHINFO_EXTENSION);
-                    echo $vari;
-                    echo "<div class = 'middleDivs'><a href='index.php?files=$path'>" . $file . "</a></div>";
+                    echo "<div class = 'middleDivs'>";
+                    putIcons($file);
+                    echo "<a href='index.php?files=$path'>" . $file . "</a>";
+                    echo "</div>";
                 } else if ($file !== "." && $file !== ".." &&  !pathinfo($file, PATHINFO_EXTENSION)) {
                     echo "<div class = 'middleDivs'><a href='index.php?files=$path/$file'><i class='bi bi-folder-fill'></i>" . $file . "</a></div>";
                 }
@@ -42,3 +43,55 @@ function readDirect()
         echo "Please select a folder";
     }
 };
+
+function putIcons($file)
+{
+    $vari = pathinfo($file, PATHINFO_EXTENSION);
+    switch ($vari) {
+        case "pdf":
+            echo "<i class='far fa-file-pdf'></i>";
+            break;
+        case "doc":
+            echo "<i class='far fa-file-word'></i>";
+            break;
+        case "csv":
+            echo "<i class='fas fa-file-csv'></i>";
+            break;
+        case "jpg":
+            echo "<i class='far fa-file-image'></i>";
+            break;
+        case "png":
+            echo "<i class='fas fa-file-image'></i>";
+            break;
+        case "txt":
+            echo "<i class='far fa-file-alt'></i>";
+            break;
+        case "ppt":
+            echo "<i class='far fa-file-powerpoint'></i>";
+            break;
+        case "odt":
+            echo "<i class='far fa-file-excel'></i>";
+            break;
+        case "zip":
+            echo "<i class='far fa-file-archive'></i>";
+            break;
+        case "rar":
+            echo "<i class='far fa-file-archive'></i>";
+            break;
+        case "exe":
+            echo "<i class='fas fa-cogs'></i>";
+            break;
+        case "svg":
+            echo "<i class='far fa-object-group'></i>";
+            break;
+        case "mp3":
+            echo "<i class='fas fa-file-audio'></i>";
+            break;
+        case "mp4":
+            echo "<i class='far fa-file-video'></i>";
+            break;
+        case "php":
+            echo "<i class='fab fa-php'></i>";
+            break;
+    }
+}

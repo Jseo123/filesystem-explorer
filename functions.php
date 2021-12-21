@@ -120,9 +120,33 @@ function uploadFiles(){
 }
 
 function displayRight(){
+
+
+
     if(isset($_POST["fname"])){
    $path = $_POST["fname"];
-   echo $path;
+   if(is_file($path)){
+if (filesize($path) >= 1000000
+){
+$size = filesize($path)/100000 . "MB";
+} else if (filesize($path) < 1000000 && filesize($path) > 0
+){
+    $size = filesize($path)/1000 . "Kylobytes";
+} else {
+    $size = "file has no data";
+}
+
+$fileDate = date(" F d Y H:i.", filemtime($path));
+$creationDate = date(" F d Y H:i.", filectime($path));
+
+    $infoArray = pathinfo($path, PATHINFO_ALL);
+    echo "Folder direction: " . $infoArray["dirname"] . "<br>
+    Name: " . $infoArray["filename"] . "<br>
+    File Type: " . $infoArray["extension"] .
+    "<br> File Size: $size" . 
+    "<br> Date modified: $fileDate".
+    "<br>File created: " . $creationDate;
+   }
     } else {
       echo  "Choose a file to display info";
     }

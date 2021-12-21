@@ -14,7 +14,7 @@
     <div><form action="deleteFolder.php" method="get">
         <input type="hidden" id="dir" name="dir" value="<?php require_once "functions.php";
     deleteFolders();?>">
-        <button type="submit">delete</button>
+        <button type="submit">delete folder</button>
     </form></div>
 </nav>
 <main class = "mainContainer">
@@ -39,6 +39,5 @@
         displayRight(); ?>
     </div>
 </main>
-    
 </body>
 </html>

@@ -109,6 +109,16 @@ function deleteFolders(){
 
 }
 
+function uploadFiles(){
+    if(isset($_GET["path"])){
+        $path = $_GET["path"];
+        echo $path;
+    } else {
+        echo "Choose a folder";
+    }
+
+}
+
 function displayRight(){
 
 

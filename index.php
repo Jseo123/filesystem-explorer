@@ -12,8 +12,7 @@
 <body>
 <nav>
     <div><form action="deleteFolder.php" method="get">
-        <label for="dir">Please enter the directory from the root to delete</label>
-        <input type="text" id="dir" name="dir" value="<?php require_once "functions.php";
+        <input type="hidden" id="dir" name="dir" value="<?php require_once "functions.php";
     deleteFolders();?>">
         <button type="submit">delete</button>
     </form></div>
@@ -36,7 +35,8 @@
         ?>
     </div>
     <div class = "flexBasis">
-        Holaaa
+        <?php require_once "functions.php";
+        displayRight(); ?>
     </div>
 </main>
     

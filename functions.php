@@ -29,8 +29,9 @@ function openFolders()
         if (is_dir($path) && $dh = opendir($path)) {
             while (($file = readdir($dh)) !== false) {
                 if ($file !== "." && $file !== ".." &&  pathinfo($file, PATHINFO_EXTENSION)) {
-                    echo "<form action= class = 'middleDivs'>";
+                    echo "<form action='index.php?path=$path' method='post'class='middleDivs'>";
                     putIcons($file);
+                    echo "<input type='hidden' id='fname' name='fname' value='$path/$file'></input>";
                     echo "<button type='submit' class='buttonFiles'>" . $file . "</button>";
                     echo "</form>";
                 } else if ($file !== "." && $file !== ".." &&  !pathinfo($file, PATHINFO_EXTENSION)) {
@@ -106,4 +107,13 @@ function deleteFolders(){
         echo "Choose a folder to delete";
     }
 
+}
+
+function displayRight(){
+    if(isset($_POST["fname"])){
+   $path = $_POST["fname"];
+   echo $path;
+    } else {
+      echo  "Choose a file to display info";
+    }
 }

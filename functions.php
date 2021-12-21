@@ -97,3 +97,13 @@ function putIcons($file)
             break;
     }
 }
+
+function deleteFolders(){
+    if(isset($_GET["path"])){
+        $path = $_GET["path"];
+        echo $path;
+    } else {
+        echo "Choose a folder to delete";
+    }
+
+}

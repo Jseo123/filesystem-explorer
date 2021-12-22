@@ -6,14 +6,21 @@
 .mainContainer{
     display: flex;
     flex-basis: 100%;
+    gap: 5px;
+    min-height: 60vh;
 }
 
 .flexBasis{
     display: flex;
     flex-basis: 20%;
-    background-color: red;
+    background-color: #D6ECEC;
     padding-top: 1%;
     padding-left: 2%;
+    border: solid 1px black;
+    border-radius: 8px;
+    margin: 0 5px 0 5px;
+    position: relative;
+    font-size: 20px;
 }
 
 a{
@@ -43,6 +50,12 @@ margin-left: 20%;
     flex-basis: 60%;
     padding-top: 1%;
     padding-left: 2%;
+    padding-right: 2%;
+    background-color: #D6ECEC;
+    border: solid 1px black;
+    border-radius: 8px;
+    position: relative;
+    font-size: 25px;
 }
 
 /*MODAL*/
@@ -91,7 +104,77 @@ nav {
     margin-top: 10%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-self: center;
+    gap: 25px;
+    position: absolute ;
+    bottom: 3vh;
 }
 
+.newFolder{
+    position: absolute;
+    bottom: 3vh;
+}
 
+.buttonFiles{
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.far, .fas{
+    font-size: 20px;
+    margin-right: 1%;
+}
+
+.fab{
+    font-size: 25px;
+    margin-right: 1%;
+}
+
+.lowButtons button{
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    background-color: #F6F2D4;
+    text-align: center;
+    font-size: 15px;
+}
+.flexBasis button{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: #F6F2D4;
+    
+}
+
+.header{
+    background-color: #22577E;
+    height: 10vh;
+    margin-bottom: 1%;
+}
+
+.searcherNav{
+    float: right;
+    width: 30%;
+    padding: auto;
+    margin-top: 2%;
+    margin-right: 3%;
+}
+.searcherNav button{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #b18e4e;
+    border: 1px solid black;
+}
+.searcher{
+    width: 80%;
+    background-color: #D6ECEC;
+}
+
+.fa-google-drive{
+    font-size: 75px;
+    margin-left: 1%;
+    margin-top: 0.5%;
+}

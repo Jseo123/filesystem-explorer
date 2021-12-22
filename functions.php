@@ -199,13 +199,6 @@ function searchBar($a){
                 closedir($dh);
             }
         }
-        // root y chekeamos, si lo encuentra display.
-        // array para los directorios.
-        // for each array. 
-        //     searchBar(nuevo path);
-        // echo "<br>";
-        // echo $_POST["searcher"];
-
     }
 }
 

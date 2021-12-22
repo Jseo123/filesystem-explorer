@@ -11,15 +11,14 @@
     <script src = "assets/script.js" defer></script>
 </head>
 <body>
-<nav>
-
-
-    <div><form action="index.php" method="post">
+<header class = "header">
+    <i class="fab fa-google-drive"></i>
+    <form action="index.php" method="post" class= "searcherNav">
         <label for="searcher"></label>
-        <input type="text" id="searcher" name="searcher">
-        <button type="submit">GO!</button>
-    </form></div>
-</nav>
+        <input type="text" id="searcher" name="searcher" class = "searcher"placeholder="Search something...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+</header>
 <main class = "mainContainer">
     <div class = "flexBasis leftSideCon">
         <?php
@@ -27,33 +26,33 @@
             callFolders("root");
 
         ?>
-        <form action="newFolder.php">
-            <input type="text" name = "folderName">
+        <form action="newFolder.php" class = "newFolder">
+            <h5>Create new Folder:</h5>
+            <input type="text" name = "folderName" placeholder="New folder name...">
             <button type="submit"><i class="fas fa-plus"></i></button>
         </form>
     </div>
     <div class = "middleFlex">
-        <div>
         <?php
             searchBar("root");
             openFolders();
         ?>
-            <div class="lowButtons"><form action="deleteFolder.php" method="get">
-        <input type="hidden" id="dir" name="dir" value="<?php require_once "functions.php";
-    deleteFolders();?>">
-        <button type="submit">delete folder</button>
-    </form>
-    <?php changeFoldername(); ?>
-        <button id="myBtn">Open Modal</button>
+        <div class="lowButtons">
+            <form action="deleteFolder.php" method="get">
+                <input type="hidden" id="dir" name="dir" value="<?php require_once "functions.php";
+                deleteFolders();?>">
+                <button type="submit">delete folder</button>
+                <button id="myBtn">Upload File</button>
+            </form>
+            <?php changeFoldername(); ?>
         </div>
-        </div>
-            <div id="myModal" class="modal">
-                <div class="modal-content">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
                 <span class="close">&times;</span>
                 <form action="upload.php" method="POST" enctype="multipart/form-data">
                     <input type="file" name = "file" id = "fileToUpload">
                     <input type="hidden" id="dir" name="dir" value="<?php require_once "functions.php";
-    uploadFiles();?>">
+                    uploadFiles();?>">
                     <input type="submit" value="submit">
                 </form>
             </div>

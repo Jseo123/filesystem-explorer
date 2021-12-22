@@ -42,8 +42,8 @@
                 <input type="hidden" id="dir" name="dir" value="<?php require_once "functions.php";
                 deleteFolders();?>">
                 <button type="submit">delete folder</button>
-                <button id="myBtn">Upload File</button>
             </form>
+            <button id="myBtn">Upload File</button>
             <?php changeFoldername(); ?>
         </div>
         <div id="myModal" class="modal">

@@ -179,6 +179,11 @@ function searchBar($a){
                     echo "<button type='submit' class='buttonFiles'>" . $realname . "</button>";
                     echo "</form>";
                 }
+                else{
+                    $name = explode("/", $filename);
+                    $realname = end($name);
+                    echo "<div class = 'middleDivs'><a href='index.php?path=$filename'><i class='bi bi-folder-fill'></i>" . $realname . "</a></div>";
+                }
             }
         }
         else{

@@ -174,14 +174,12 @@ function searchBar($a){
                     if ($file !== "." && $file !== ".."){
                         if(!is_file($file)){
                             $root = "$a/$file";
-                            echo $root."<br>";
-                            echo $file."<br>";
-                            // searchBar($root);
+                            searchBar($root);
                         }
                     }
                 }
+                closedir($dh);
             }
-            closedir($a);
         }
         // root y chekeamos, si lo encuentra display.
         // array para los directorios.

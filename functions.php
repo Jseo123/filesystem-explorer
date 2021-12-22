@@ -165,7 +165,20 @@ function searchBar($a){
         $wanted = $_POST["searcher"];
         if (glob("$a/*$wanted*") != false){
             foreach(glob("$a/*$wanted*") as $filename){
-                echo $filename."<br>";
+                if (is_file($filename)){
+                    $name = explode("/", $filename);
+                    $realname = end($name);
+                    array_pop($name);
+                    $path = null;
+                    foreach($name as $element){
+                        $path .= "$element/";
+                    }
+                    echo "<form action='index.php?path=$path' method='post'class='middleDivs'>";
+                    putIcons($realname);
+                    echo "<input type='hidden' id='fname' name='fname' value='$filename'></input>";
+                    echo "<button type='submit' class='buttonFiles'>" . $realname . "</button>";
+                    echo "</form>";
+                }
             }
         }
         else{

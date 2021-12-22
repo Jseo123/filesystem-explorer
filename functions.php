@@ -165,3 +165,19 @@ function displayRight()
         echo  "Choose a file to display info";
     }
 }
+
+function searchBar(){
+    if(isset($_POST["searcher"])){
+
+    }
+}
+
+function changeFolderName(){
+    if(isset($_GET["path"])){
+    $path = $_GET["path"];
+    echo "<form action='nameChange.php' method='post'>
+    <input type='hidden' name='path' value='$path'>
+    <button>change name</button>
+    </form>";
+}
+}

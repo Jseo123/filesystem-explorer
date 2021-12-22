@@ -43,8 +43,8 @@
                 deleteFolders();?>">
                 <button type="submit">delete folder</button>
             </form>
-            <button id="myBtn">Upload File</button>
             <?php changeFoldername(); ?>
+            <button id="myBtn" class = "rebelButton">Upload File</button>
         </div>
         <div id="myModal" class="modal">
             <div class="modal-content">

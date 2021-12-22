@@ -145,7 +145,6 @@ nav {
     height: 30px;
     border: 1px solid black;
     background-color: #F6F2D4;
-    
 }
 
 .header{
@@ -177,4 +176,8 @@ nav {
     font-size: 75px;
     margin-left: 1%;
     margin-top: 0.5%;
+}
+
+.rebelButton{
+    margin-top: 1.5%;
 }

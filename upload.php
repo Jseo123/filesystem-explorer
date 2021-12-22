@@ -13,7 +13,7 @@ else{
     error_reporting(E_ALL);
     echo "archivo no subido!!";
 }
-
+header("Location:./index.php");
 
 // $uploadOk = 1;
 // $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

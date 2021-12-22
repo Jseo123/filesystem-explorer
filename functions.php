@@ -133,10 +133,10 @@ function displayRight()
     if (isset($_POST["fname"])) {
         $path = $_POST["fname"];
         if (is_file($path)) {
-            if (filesize($path) >= 1000000) {
-                $size = filesize($path) / 100000 . "MB";
+            if (filesize($path) >= 10000000) {
+                $size = filesize($path) / 1000000 . "MB";
             } else if (filesize($path) < 1000000 && filesize($path) > 0) {
-                $size = filesize($path) / 1000 . "Kylobytes";
+                $size = filesize($path) / 1000 . "Kilobytes";
             } else {
                 $size = "file has no data";
             }

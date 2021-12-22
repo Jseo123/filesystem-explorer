@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>File System Explorer</title>
     <link rel = "stylesheet" href="assets/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -12,10 +12,12 @@
 </head>
 <body>
 <nav>
-    <div><form action="deleteFolder.php" method="get">
-        <input type="hidden" id="dir" name="dir" value="<?php require_once "functions.php";
-    deleteFolders();?>">
-        <button type="submit">delete folder</button>
+
+
+    <div><form action="index.php" method="post">
+        <label for="searcher"></label>
+        <input type="text" id="searcher" name="searcher">
+        <button type="submit">GO!</button>
     </form></div>
 </nav>
 <main class = "mainContainer">
@@ -31,10 +33,19 @@
         </form>
     </div>
     <div class = "middleFlex">
+        <div>
         <?php
             openFolders();
         ?>
+            <div class="lowButtons"><form action="deleteFolder.php" method="get">
+        <input type="hidden" id="dir" name="dir" value="<?php require_once "functions.php";
+    deleteFolders();?>">
+        <button type="submit">delete folder</button>
+    </form>
+    <?php changeFoldername(); ?>
         <button id="myBtn">Open Modal</button>
+        </div>
+        </div>
             <div id="myModal" class="modal">
                 <div class="modal-content">
                 <span class="close">&times;</span>

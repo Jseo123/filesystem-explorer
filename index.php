@@ -24,7 +24,7 @@
     <div class = "flexBasis leftSideCon">
         <?php
             require_once "functions.php";
-            callFolders();
+            callFolders("root");
 
         ?>
         <form action="newFolder.php">
@@ -35,6 +35,7 @@
     <div class = "middleFlex">
         <div>
         <?php
+            searchBar("root");
             openFolders();
         ?>
             <div class="lowButtons"><form action="deleteFolder.php" method="get">

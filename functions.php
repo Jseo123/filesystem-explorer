@@ -1,19 +1,13 @@
 <?php
-function callFolders()
+function callFolders($path)
 {
-    $path = "root/";
     if (is_dir($path) && $dh = opendir($path)) {
         while (($file = readdir($dh)) !== false) {
             if ($file !== "." && $file !== ".." &&  !pathinfo($file, PATHINFO_EXTENSION)) {
-                $path2 = "root/$file";
+                $path2 = "$path/$file";
                 echo "<div><a href='index.php?path=$path2'><i class='bi bi-folder-fill'></i>" . $file . "</a></div>";
-                if (is_dir($path2) && $dh2 = opendir($path2)) {
-                    while (($file2 = readdir($dh2)) !== false) {
-                        if ($file2 !== "." && $file2 !== ".." &&  !pathinfo($file2, PATHINFO_EXTENSION)) {
-                            $path3 = "root/$file/$file2";
-                            echo "<div  class='subdirectories'><a href='index.php?path=$path3' class='anchor'><i class='bi bi-folder-fill'></i>" . $file2 . "</a></div>";
-                        }
-                    }
+                if (is_dir($path2)) {
+                    callFolders($path2);
                 }
             }
         }
@@ -40,7 +34,7 @@ function openFolders()
             }
         }
     }
-    if (!isset($_GET["path"])) {
+    if (!isset($_GET["path"]) && !isset($_POST["searcher"])) {
         echo "Please select a folder";
     }
 };
@@ -141,8 +135,8 @@ function displayRight()
                 $size = "file has no data";
             }
 
-            $fileDate = date(" F d Y H:i.", filemtime($path));
-            $creationDate = date(" F d Y H:i.", filectime($path));
+            $fileDate = date(" F d Y H:i", filemtime($path));
+            $creationDate = date(" F d Y H:i", filectime($path));
 
             $infoArray = pathinfo($path, PATHINFO_ALL);
             echo "<div class = 'infoContainer'>";
@@ -166,8 +160,35 @@ function displayRight()
     }
 }
 
-function searchBar(){
+function searchBar($a){
     if(isset($_POST["searcher"])){
+        $wanted = $_POST["searcher"];
+        if (glob("$a/*$wanted*") != false){
+            foreach(glob("$a/*$wanted*") as $filename){
+                echo $filename."<br>";
+            }
+        }
+        else{
+            if (is_dir($a) && $dh = opendir($a)){
+                while (($file = readdir($dh)) !== false) {
+                    if ($file !== "." && $file !== ".."){
+                        if(!is_file($file)){
+                            $root = "$a/$file";
+                            echo $root."<br>";
+                            echo $file."<br>";
+                            // searchBar($root);
+                        }
+                    }
+                }
+            }
+            closedir($a);
+        }
+        // root y chekeamos, si lo encuentra display.
+        // array para los directorios.
+        // for each array. 
+        //     searchBar(nuevo path);
+        // echo "<br>";
+        // echo $_POST["searcher"];
 
     }
 }
